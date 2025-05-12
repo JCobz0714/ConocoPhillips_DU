@@ -109,7 +109,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="CSV_SaveExtractionResults" sap:VirtualizedContainerService.HintSize="803.2,12942.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CSV_SaveExtractionResults" sap:VirtualizedContainerService.HintSize="1653,12934" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DocumentData" />
       <Variable x:TypeArguments="x:String" Name="Variant_Asset">
@@ -154,9 +154,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Transaction Item" sap:VirtualizedContainerService.HintSize="514.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[in_TransactionItem.ToString]" />
-    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[DocumentData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="514.4,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Data\ProductionStatement_template.xlsx" />
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;VariantAsset&quot;).ToString]" sap:VirtualizedContainerService.HintSize="514.4,11740.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <ui:LogMessage DisplayName="Log Message - Transaction Item" sap:VirtualizedContainerService.HintSize="515,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[in_TransactionItem]" />
+    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[DocumentData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="515,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Data\ProductionStatement_template.xlsx" />
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;VariantAsset&quot;).ToString]" sap:VirtualizedContainerService.HintSize="515,11735" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
         <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="512.8,89.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -166,13 +166,13 @@
           </sap:WorkflowViewStateService.ViewState>
         </Sequence>
       </Switch.Default>
-      <Sequence x:Key="Hiland Partners" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence x:Key="Hiland Partners" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
