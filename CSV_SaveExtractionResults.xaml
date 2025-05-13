@@ -109,7 +109,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="CSV_SaveExtractionResults" sap:VirtualizedContainerService.HintSize="1653,12934" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CSV_SaveExtractionResults" sap:VirtualizedContainerService.HintSize="1653,12869" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DocumentData" />
       <Variable x:TypeArguments="x:String" Name="Variant_Asset">
@@ -156,9 +156,9 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - Transaction Item" sap:VirtualizedContainerService.HintSize="515,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[in_TransactionItem]" />
     <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[DocumentData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="515,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Data\ProductionStatement_template.xlsx" />
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;VariantAsset&quot;).ToString]" sap:VirtualizedContainerService.HintSize="515,11735" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;VariantAsset&quot;).ToString]" sap:VirtualizedContainerService.HintSize="515,11674" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Switch.Default>
-        <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="512.8,89.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="513,89" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,7 +180,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -297,15 +297,21 @@
               </ui:AssignOperation>
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="ONEOK" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence x:Key="ONEOK" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
@@ -313,7 +319,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
@@ -446,7 +452,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
@@ -581,7 +587,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_47">
@@ -716,7 +722,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_62">
@@ -851,7 +857,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_77">
@@ -972,13 +978,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="Energy Transfer" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <Sequence x:Key="Energy Transfer" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_91">
@@ -986,7 +992,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_92">
@@ -1107,13 +1113,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="COPANO PROCESSING" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence x:Key="COPANO PROCESSING" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_106">
@@ -1121,7 +1127,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_107">
@@ -1240,13 +1246,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="CARLSBAD GATHERING SYSTEM" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <Sequence x:Key="CARLSBAD GATHERING SYSTEM" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_11">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_121">
@@ -1254,7 +1260,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_122">
@@ -1375,13 +1381,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="RSP PERMIAN LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence x:Key="RSP PERMIAN LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_136">
@@ -1389,7 +1395,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_137">
@@ -1508,13 +1514,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="COG OPERATING LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence x:Key="COG OPERATING LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_13">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_151">
@@ -1522,7 +1528,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_152">
@@ -1641,13 +1647,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="Versado Gas Processors, L.L.C." DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <Sequence x:Key="Versado Gas Processors, L.L.C." DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_14">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_166">
@@ -1655,7 +1661,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_167">
@@ -1774,13 +1780,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="Targa Pipeline Mid-Continent WestTEX LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence x:Key="Targa Pipeline Mid-Continent WestTEX LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_181">
@@ -1788,7 +1794,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_182">
@@ -1907,13 +1913,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="Targa Northern Delaware LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence x:Key="Targa Northern Delaware LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_16">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_196">
@@ -1921,7 +1927,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_197">
@@ -2042,13 +2048,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="BENEDUM COMPLEX" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence x:Key="BENEDUM COMPLEX" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_16">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_211">
@@ -2056,7 +2062,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_212">
@@ -2175,13 +2181,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="SALE RANCH GAS PLANT" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+      <Sequence x:Key="SALE RANCH GAS PLANT" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_17">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_17">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_226">
@@ -2189,7 +2195,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_227">
@@ -2308,13 +2314,13 @@
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence x:Key="PERMIAN DELAWARE ENTERPRISES HOLDINGS LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="512.8,637.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence x:Key="PERMIAN DELAWARE ENTERPRISES HOLDINGS LLC" DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479.2,577.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_18">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,573" sap2010:WorkflowViewState.IdRef="MultipleAssign_18">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_241">
@@ -2322,7 +2328,7 @@
                   <OutArgument x:TypeArguments="x:String">[Variant_Asset]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Keyword").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Asset_Variant_Name").ToString]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_242">
@@ -2442,10 +2448,10 @@
         </ui:MultipleAssign>
       </Sequence>
     </Switch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Creating the data table to hold the processed data&quot;]" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {Variant_Asset, MeterNumber, MeterName, ProductionDate, BTU, PressureBase, Basis, AllocationDecimal, MCF, MMBTU, Gas_Lift_MCF, Gas_Lift_MMBTU1, Diverted_Gas_MCF, Diverted_Gas_MMBTU, Validation}]" DataTable="[dt_ProductionStatement]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="514.4,220" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;Creating Excel file for document: {0}&quot;, in_TransactionItem.SpecificContent(&quot;ReferenceToFileName&quot;).ToString)]" />
-    <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="False" DataTable="[dt_ProductionStatement]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="514.4,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Data" WorkbookPath="[in_OutputFolderPath]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="515,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Creating the data table to hold the processed data&quot;]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {Variant_Asset, MeterNumber, MeterName, ProductionDate, BTU, PressureBase, Basis, AllocationDecimal, MCF, MMBTU, Gas_Lift_MCF, Gas_Lift_MMBTU1, Diverted_Gas_MCF, Diverted_Gas_MMBTU, Validation}]" DataTable="[dt_ProductionStatement]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="515,218" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="515,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;Creating Excel file for document: {0}&quot;, in_TransactionItem.SpecificContent(&quot;ReferenceToFileName&quot;).ToString)]" />
+    <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="False" DataTable="[dt_ProductionStatement]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="515,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Data" WorkbookPath="[in_OutputFolderPath]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Orchestrator_UploadToQueue - Invoke Workflow File (Orchestrator_UploadToQueue.xaml)" sap:VirtualizedContainerService.HintSize="514.4,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Orchestrator_UploadToQueue.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_CSVFilePath">[in_OutputFolderPath]</InArgument>
