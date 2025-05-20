@@ -115,7 +115,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence - Attended" sap:VirtualizedContainerService.HintSize="1666,1549" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence DisplayName="Main Sequence - Attended" sap:VirtualizedContainerService.HintSize="1780,1549" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="config" />
       <Variable x:TypeArguments="x:Int32" sap2010:Annotation.AnnotationText="Used to control the number of attempts of retrying in case of a system exception." Name="maxAttempts" />
